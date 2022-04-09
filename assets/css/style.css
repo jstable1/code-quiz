@@ -1,0 +1,34 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --primary: #351B74;
+    --secondary: #BD60E7;
+    --white: #FFFFFF;
+}
+
+body {
+    text-align: center;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 15px;
+    font-size: large;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+}
+
+.highScoresLink {
+    text-align: left;
+    color: var(--secondary);
+    padding: 10px;
+}
+
+.startQuizSection {
+    margin: 60px;
+}
