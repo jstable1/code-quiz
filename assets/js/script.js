@@ -4,6 +4,7 @@ let currentQuestion = 0;
 const questionContainer = document.getElementById("questionContainer");
 let time = 75;
 let myTime;
+let correctWrongMessage = document.getElementById("correctnessMessage");
 
 startQuizBtn.addEventListener("click", e => startQuiz(e));
 
@@ -71,11 +72,11 @@ var displayNextQuestion = function () {
 
 var checkAnswer = function (userChoice) {
     if (userChoice === questions[currentQuestion].correctAnswer) {
-        console.log('Correct!')
+        correctWrongMessage.innerText = "Correct!";
     }
     else {
         time -= 5
-        console.log('Wrong!')
+        correctWrongMessage.innerText = "Wrong!";
     }
 }
 
@@ -86,6 +87,7 @@ var endQuiz = function() {
 }
 
 //add event listener to button on form that calls saveinitials
+// document.getElementById("save-initials").addEventListener("click", saveInitials())
 
 var saveInitials
 
