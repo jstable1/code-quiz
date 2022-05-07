@@ -23,6 +23,10 @@ body {
     background-color: var(--secondary);
 }
 
+.hidden {
+    display: none;
+}
+
 .highScoresLink {
     text-align: left;
     color: var(--secondary);
