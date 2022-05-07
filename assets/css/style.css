@@ -23,6 +23,11 @@ body {
     background-color: var(--secondary);
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .hidden {
     display: none;
 }
@@ -35,4 +40,10 @@ body {
 
 .startQuizSection {
     margin: 60px;
+}
+
+.timerContainer {
+    text-align: right;
+    color: var(--secondary);
+    padding: 10px;
 }

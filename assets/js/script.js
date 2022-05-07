@@ -2,29 +2,31 @@ const startQuizBtn = document.getElementById("start-quiz");
 // declare a global variable to hold current question index - starts off with 0
 let currentQuestion = 0;
 const questionContainer = document.getElementById("questionContainer");
+let time = 75;
+let myTime;
 
 startQuizBtn.addEventListener("click", e => startQuiz(e));
 
 var questions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['strings', 'booleans', 'alerts', 'numbers'],
-    correctAnswer: 2
+    correctAnswer: 'alerts'
 }, {
     question: 'The condition in an if/else statement is enclosed with _____',
     choices: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
-    correctAnswer: 2
+    correctAnswer: 'parenthesis'
 }, {
     question: 'Arrays in JavaScript can be used to store _____',
     choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
-    correctAnswer: 3
+    correctAnswer: 'all of the above'
 }, {
     question: 'String values must be enclosed within _____ when being assigned to variables.',
     choices: ['commas', 'curly brackets', 'quotes', 'parenthesis'],
-    correctAnswer: 2
+    correctAnswer: 'quotes'
 }, {
     question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
     choices: ['Javascript', 'terminal/bash', 'for loops', 'console.log'],
-    correctAnswer: 3
+    correctAnswer: 'console.log'
 }];
 
 var startQuiz = function (e) {
@@ -33,33 +35,57 @@ var startQuiz = function (e) {
     document.getElementById("startContainer").setAttribute("class", "hidden");
     document.getElementById("questionContainer").setAttribute("class", "quizSection");
     displayNextQuestion()
+    myTime = setInterval (() => {
+        document.getElementById("quizTimer").innerText=time
+        time --
+            if (time === 0){
+                clearInterval(myTime)
+                // endQuiz()
+            }
+    }, 1000)
 }
 
 var displayNextQuestion = function () {
     var activeQuestion = questions[currentQuestion];
     questionContainer.innerHTML = "";
-    var questionEL = document.createElement("p");
-    questionEL.innerText = activeQuestion.question;
-    questionContainer.appendChild(questionEL);
+    var questionEl = document.createElement("p");
+    questionEl.innerText = activeQuestion.question;
+    questionContainer.appendChild(questionEl);
     for (let i = 0; i < activeQuestion.choices.length; i++) {
         var answersEl = document.createElement("button");
         answersEl.innerText = activeQuestion.choices[i];
         questionContainer.appendChild(answersEl);
         answersEl.addEventListener("click", function (event) {
             event.preventDefault();
-            // checkAnswer()
+            checkAnswer(event.target.innerText)
             currentQuestion++
-            displayNextQuestion()
+            console.log(currentQuestion)
+                if (currentQuestion === 5) {
+                    clearInterval(myTime)
+                    // endQuiz()
+                }
+                else {displayNextQuestion()}
         })
     }
 }
 
+var checkAnswer = function (userChoice) {
+    if (userChoice === questions[currentQuestion].correctAnswer) {
+        console.log('Correct!')
+    }
+    else {
+        time -= 5
+        console.log('Wrong!')
+    }
+}
 
-var checkAnswer
+var endQuiz = function() {
+    document.getElementById("questionContainer").setAttribute("class", "hidden");
+    document.getElementById("initialsContainer").setAttribute("class", "initials");
+    document.getElementById("score").innerText=time
+}
 
-var endQuiz
+//add event listener to button on form that calls saveinitials
 
 var saveInitials
-
-var timer
 
