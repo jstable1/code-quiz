@@ -37,11 +37,11 @@ var startQuiz = function (e) {
     document.getElementById("questionContainer").setAttribute("class", "quizSection");
     displayNextQuestion()
     myTime = setInterval (() => {
-        document.getElementById("quizTimer").innerText=time
+        document.getElementById("quizTimer").innerText="Time: " + time
         time --
             if (time === 0){
                 clearInterval(myTime)
-                // endQuiz()
+                endQuiz()
             }
     }, 1000)
 }
@@ -63,7 +63,7 @@ var displayNextQuestion = function () {
             console.log(currentQuestion)
                 if (currentQuestion === 5) {
                     clearInterval(myTime)
-                    // endQuiz()
+                    endQuiz()
                 }
                 else {displayNextQuestion()}
         })
@@ -83,11 +83,11 @@ var checkAnswer = function (userChoice) {
 var endQuiz = function() {
     document.getElementById("questionContainer").setAttribute("class", "hidden");
     document.getElementById("initialsContainer").setAttribute("class", "initials");
-    document.getElementById("score").innerText=time
+    document.getElementById("finalScore").innerText="Your final score is "+time+"."
 }
 
 //add event listener to button on form that calls saveinitials
-// document.getElementById("save-initials").addEventListener("click", saveInitials())
+document.getElementById("save-initials").addEventListener("click", saveInitials())
 
-var saveInitials
+
 

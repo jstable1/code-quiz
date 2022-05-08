@@ -14,14 +14,21 @@
     </div>
     <div class="startQuizSection" id="startContainer">
         <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by five seconds!</p>
         <button class="btn" id="start-quiz" type="submit">Start Quiz</button>
+    </div>
+    <div class="hidden" id="initialsContainer">
+        <h2>All done!</h2>
+        <h3 id="finalScore"></h3>
+        <div>
+            <h3>Enter initials:
+                <textarea></textarea>
+                <button class="initials-btn" id="save-initials" type="submit">Submit</button>
+            </h3> 
+        </div>
     </div>
     <div class="hidden" id="questionContainer"></div>
         <div class="message" id="correctnessMessage"></div>
-    <div class="hidden" id="initialsContainer">
-        <button class="btn" id="save-initials" type="submit">Save Initials</button>
-    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 
