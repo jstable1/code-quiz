@@ -1,0 +1,71 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --primary: #351B74;
+    --secondary: #BD60E7;
+    --white: #FFFFFF;
+}
+
+body {
+    text-align: center;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 15px;
+    font-size: large;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+.highScoresLink {
+    text-align: left;
+    color: var(--secondary);
+    padding: 10px;
+}
+
+.initials {
+    text-align: left;
+    margin-left: 30vw;
+}
+
+.initials-btn {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 5px 10px;
+    border: var(--white);
+    font-size: large;
+    border-radius: 10px;
+}
+
+.message {
+    padding: 10px;
+}
+
+.startQuizSection {
+    margin: 60px;
+}
+
+textarea {
+    margin-bottom: -10px;
+}
+
+.timerContainer {
+    text-align: right;
+    color: var(--secondary);
+    padding: 10px;
+}

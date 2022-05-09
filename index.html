@@ -5,8 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Code Quiz!!!</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    
+    <div class="header">
+        <p class="highScoresLink">View high scores</p>
+        <p id="quizTimer" class="timerContainer"></p>
+    </div>
+    <div class="startQuizSection" id="startContainer">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by five seconds!</p>
+        <button class="btn" id="start-quiz" type="submit">Start Quiz</button>
+    </div>
+    <div class="hidden" id="initialsContainer">
+        <h2>All done!</h2>
+        <h3 id="finalScore"></h3>
+        <div>
+            <h3>Enter initials:
+                <textarea id="initials"></textarea>
+                <button class="initials-btn" id="save-initials" type="submit">Submit</button>
+            </h3> 
+        </div>
+    </div>
+    <div class="hidden" id="questionContainer"></div>
+        <div class="message" id="correctnessMessage"></div>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
