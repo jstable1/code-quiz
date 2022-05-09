@@ -23,6 +23,18 @@ body {
     background-color: var(--secondary);
 }
 
+.btn-choices {
+    display: flex;
+    margin: 10px;
+    background-color: var(--secondary);
+    color: var(--white);
+    border: 3px solid var(--white);
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 39vw;
+    width: 20vw;
+}
+
 .header {
     display: flex;
     justify-content: space-between;

@@ -56,6 +56,7 @@ var displayNextQuestion = function () {
     questionContainer.appendChild(questionEl);
     for (let i = 0; i < activeQuestion.choices.length; i++) {
         var answersEl = document.createElement("button");
+        answersEl.classList.add("btn-choices");
         answersEl.innerText = activeQuestion.choices[i];
         questionContainer.appendChild(answersEl);
         answersEl.addEventListener("click", function (event) {
