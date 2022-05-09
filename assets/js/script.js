@@ -5,6 +5,8 @@ const questionContainer = document.getElementById("questionContainer");
 let time = 75;
 let myTime;
 let correctWrongMessage = document.getElementById("correctnessMessage");
+const saveInitialsBtn = document.getElementById("save-initials");
+const initialsInput = document.querySelector("#initials");
 
 startQuizBtn.addEventListener("click", e => startQuiz(e));
 
@@ -82,12 +84,18 @@ var checkAnswer = function (userChoice) {
 
 var endQuiz = function() {
     document.getElementById("questionContainer").setAttribute("class", "hidden");
+    document.getElementById("quizTimer").setAttribute("class", "hidden");
     document.getElementById("initialsContainer").setAttribute("class", "initials");
     document.getElementById("finalScore").innerText="Your final score is "+time+"."
 }
 
 //add event listener to button on form that calls saveinitials
-document.getElementById("save-initials").addEventListener("click", saveInitials())
+saveInitialsBtn.addEventListener("click", e => saveInitials(e));
 
-
-
+var saveInitials = function() {
+    localStorage.setItem("initials", initialsInput.value)
+    localStorage.setItem("score", time)
+    document.getElementById("startContainer").setAttribute("class", "startQuizSection");
+    document.getElementById("initialsContainer").setAttribute("class", "hidden");
+    correctWrongMessage.setAttribute("class", "hidden")
+}
